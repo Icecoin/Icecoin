@@ -1,3 +1,3 @@
-FooCoin (FOO)
+Icecoin (ICE)
 
-Blah, blah, blah.
+Icecoin is the best you'll see in a while. Take a look.
