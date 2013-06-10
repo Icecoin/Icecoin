@@ -828,9 +828,13 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 10 * COIN;
-
-    return nSubsidy + nFees;
+	if ( nHeight< 12) 
+	{
+    int64 nSubsidy = 35000 * COIN;
+	}
+	else
+	int64 nSubsidy = 10 * COIN;
+	return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 60 * 60; // Icecoin: 1 hour
