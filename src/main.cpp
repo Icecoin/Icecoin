@@ -829,9 +829,13 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
 	int64 nSubsidy = 10 * COIN;
-	if (nHeight < 5)
+	if (nHeight < 20)
 	{
 		nSubsidy = 50000 * COIN;
+	}
+	if (nHeight >= 20 && nHeight< 90)
+	{
+		nSubsidy = 0 * COIN;
 	}
 	return nSubsidy + nFees;
 }
@@ -2017,14 +2021,14 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1370851873; //epochtime
+        block.nTime    = 1370985241; //epochtime
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 1818962;
+        block.nNonce   = 0;
 
         if (fTestNet)
         {
-            block.nTime    = 1370850101;
-            block.nNonce   = 538441;
+            block.nTime    = 1370985241;
+            block.nNonce   = 0;
         }
 
         //// debug print
